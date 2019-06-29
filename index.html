@@ -24,18 +24,33 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
-  <div class="u-full-width container">
-    <img class="column" src="./img/default.jpg" alt="default placard holding image">
-    <br>
-    <span class ="centered"  id="display">This is some text!</span>
-
-    <div class="container">
-      <form class="columns">
-        <input type="text" name="message" id="user_input" placeholder="default text">
-      </form>
-      <input type="submit" onclick="showInput();">
-      <div>
+  <div class="u-full-width">
+    
+    <div class="container" style="max-width: 100%;">
+   
+            <div class="one-half column">
+                <img src="./img/default.jpg" alt="default placard holding image">
+                <span class ="centered"  id="display">This is some text!</span>
+            </div>
+        
+            <div class="one-half column">
+                <h1>Outrage Tag Generator</h1>
+                <h6>Created by <a href="https://www.twitter.com/thecodepost">Sarthak Ganguly</a></h6>
+                <span>Hello fellow activist. This is a great time to be in. We understand
+                  how difficult it may be for someone as busy as you are to be on the streets
+                  protesting against stuff. So, we have come up with a readymade solution that 
+                  will save you time and effort - but still get the job done!
+                </span>
+                <hr>
+                <div style="text-align: center;">
+                    <form ><input type="text" style="width:100%;" name="message" id="user_input" placeholder="Enter text to outrage about"></form>
+                    <input type="submit" value="Submit to Generate Text" onclick="showInput();">
+                </div>
+            </div>
+          
+    </div>
   </div>
+  
   <script>
     function showInput() {
         document.getElementById('display').innerHTML =
@@ -56,6 +71,15 @@
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async></script>
 -->
+<footer>
+  <div class="container">
+      
+      <hr>
+      <span>Copyright &copy; Sarthak Ganguly</span>
+      <p>Disclaimer: This is created just for humor and should be treated as such. Any outrage, real or 
+          imaginary is not my fault.</p>
+  </div>
+</footer>
 </body>
 
 </html>
