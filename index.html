@@ -35,16 +35,24 @@
         
             <div class="one-half column">
                 <h1>Outrage Tag Generator</h1>
-                <h6>Created by <a href="https://www.twitter.com/thecodepost">Sarthak Ganguly</a></h6>
+                
                 <span>Hello fellow activist. This is a great time to be in. We understand
                   how difficult it may be for someone as busy as you are to be on the streets
                   protesting against stuff. So, we have come up with a readymade solution that 
                   will save you time and effort - but still get the job done!
                 </span>
-                <hr>
+                
                 <div style="text-align: center;">
                     <form ><input type="text" style="width:100%;" name="message" id="user_input" placeholder="Enter text to outrage about"></form>
                     <input type="submit" value="Submit to Generate Text" onclick="showInput();">
+                </div>
+                <div class="slidercontainer">
+                  <input type="range" min="1" max="360" value="1" class="slider" id="degrees">
+                  Degrees: <span id="degtext"></span>
+                  <input type="range" min="1" max="100" value="50" class="slider" id="xpos">
+                  X : <span id="xval"></span>
+                  <input type="range" min="1" max="100" value="50" class="slider" id="ypos">
+                  Y : <span id="yval"></span>
                 </div>
             </div>
           
@@ -56,6 +64,40 @@
         document.getElementById('display').innerHTML =
                     document.getElementById("user_input").value;
     }
+    var slider = document.getElementById("degrees");
+    var _degtext = document.getElementById("degtext");
+    _degtext.innerHTML = slider.value; // Display the default slider value
+
+    var xslider = document.getElementById("xpos");
+    var xval = document.getElementById("xval");
+    xval.innerHTML = xslider.value; // Display the default slider value
+
+    var yslider = document.getElementById("ypos");
+    var yval = document.getElementById("yval");
+    yval.innerHTML = yslider.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    // change rotation
+    document.getElementById("degrees").oninput = function(){
+      _degtext.innerHTML = this.value;
+      var disp = document.getElementById("display");
+      disp.style.transform = 'rotate('+this.value+'deg)';
+    }
+
+    // change x coordinate
+    document.getElementById("xpos").oninput = function(){
+      xval.innerHTML = this.value;
+      var disp = document.getElementById("display");
+      disp.style.left = +this.value+'%';
+    }
+
+    // change y coordinate
+    document.getElementById("ypos").oninput = function(){
+      yval.innerHTML = this.value;
+      var disp = document.getElementById("display");
+      disp.style.top = this.value+'%';
+    }
+    
   </script>
 
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
