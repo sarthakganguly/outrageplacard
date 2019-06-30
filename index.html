@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/neri.css">
   <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Schoolbell&display=swap" rel="stylesheet">
 
   <meta name="theme-color" content="#fafafa">
 </head>
@@ -47,14 +48,35 @@
                     <input type="submit" value="Submit to Generate Text" onclick="showInput();">
                 </div>
                 <div class="slidercontainer">
-                  <input type="range" min="1" max="360" value="1" class="slider" id="degrees">
-                  Degrees: <span id="degtext"></span>
-                  <input type="range" min="1" max="100" value="50" class="slider" id="xpos">
-                  X : <span id="xval"></span>
-                  <input type="range" min="1" max="100" value="50" class="slider" id="ypos">
-                  Y : <span id="yval"></span>
-                </div>
-            </div>
+                  
+                  <div>
+                    <div class="one-third column">
+                      Degrees: <span id="degtext"></span><br>
+                    </div>
+                    <div class="two-thirds column">
+                      <input type="range" min="1" max="360" value="1" class="slider" id="degrees">
+                    </div>
+                  </div>
+                  <div>
+                    <div class="one-third column">
+                      X : <span id="xval"></span><br>
+                     </div>
+                     <div class="two-thirds column">
+                        <input type="range" min="1" max="100" value="15" class="slider" id="xpos">
+                     </div>
+                  </div>
+                    <div>
+                      <div class="one-third column">
+                        Y : <span id="yval"></span>
+                      </div>
+                      <div class="two-thirds column">
+                          <input type="range" min="1" max="100" value="60" class="slider" id="ypos">
+                      </div>
+                    </div>
+                  
+
+                </div><!-- end of slider container-->
+              </div><!-- end of text block div-->
           
     </div>
   </div>

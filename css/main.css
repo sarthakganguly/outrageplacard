@@ -3,6 +3,7 @@ img{
   height:auto;
 }
 .centered {
+  font-family: 'Schoolbell', cursive;
   position: absolute;
     top: 66%;
     left: 20%;
