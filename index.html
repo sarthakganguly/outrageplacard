@@ -3,8 +3,8 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Outrage - Placard Holding Generator</title>
-  <meta name="description" content="Outrage - Placard Holding Generator">
+  <title>Outrage - Placard Generator</title>
+  <meta name="description" content="Outrage - Placard Generator">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="manifest" href="site.webmanifest">
@@ -35,7 +35,7 @@
             </div>
         
             <div class="one-half column">
-                <h1>Outrage Tag Generator</h1>
+                <h1>Outrage Placard Generator</h1>
                 
                 <span>Hello fellow activist. This is a great time to be in. We understand
                   how difficult it may be for someone as busy as you are to be on the streets
@@ -49,23 +49,23 @@
                 </div>
                 <div class="slidercontainer">
                   
-                  <div>
-                    <div class="one-third column">
-                      Degrees: <span id="degtext"></span><br>
+                    <div><!--for degrees-->
+                      <div class="one-third column">
+                        Degrees: <span id="degtext"></span><br>
+                      </div>
+                      <div class="two-thirds column">
+                        <input type="range" min="1" max="360" value="1" class="slider" id="degrees">
+                      </div>
                     </div>
-                    <div class="two-thirds column">
-                      <input type="range" min="1" max="360" value="1" class="slider" id="degrees">
-                    </div>
-                  </div>
-                  <div>
+                    <div><!--for x value-->
                     <div class="one-third column">
                       X : <span id="xval"></span><br>
                      </div>
                      <div class="two-thirds column">
                         <input type="range" min="1" max="100" value="15" class="slider" id="xpos">
                      </div>
-                  </div>
-                    <div>
+                    </div>
+                    <div><!--for y value-->
                       <div class="one-third column">
                         Y : <span id="yval"></span>
                       </div>
@@ -73,7 +73,14 @@
                           <input type="range" min="1" max="100" value="60" class="slider" id="ypos">
                       </div>
                     </div>
-                  
+                    <div><!--for font size-->
+                      <div class="one-third column">
+                        font size : <span id="fsize"></span>
+                      </div>
+                      <div class="two-thirds column">
+                          <input type="range" min="1" max="72" value="20" class="slider" id="fsizeslider">
+                      </div>
+                    </div>
 
                 </div><!-- end of slider container-->
               </div><!-- end of text block div-->
@@ -98,6 +105,10 @@
     var yval = document.getElementById("yval");
     yval.innerHTML = yslider.value; // Display the default slider value
 
+    var fsizeslider = document.getElementById("fsizeslider");
+    var fsize = document.getElementById("fsize");
+    fsize.innerHTML = fsizeslider.value; // Display the default slider value
+
     // Update the current slider value (each time you drag the slider handle)
     // change rotation
     document.getElementById("degrees").oninput = function(){
@@ -118,6 +129,13 @@
       yval.innerHTML = this.value;
       var disp = document.getElementById("display");
       disp.style.top = this.value+'%';
+    }
+
+    // change font size
+    document.getElementById("fsizeslider").oninput = function(){
+      fsizeslider.innerHTML = this.value;
+      var disp = document.getElementById("display");
+      disp.style.fontSize = this.value+'px';
     }
     
   </script>
